@@ -14,14 +14,28 @@ nav a:hover {
 nav a {
     list-style-type: none;
     display: flex;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
-.page__navigation{
+.page__navigation nav {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    justify-content: space-evenly;
+}
+
+.page__navigation {
+    margin: 10px auto;
+    position: sticky;
+    top: 0;
+    background-color: #007BFF;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 50%;
+    border-radius: 8px;
+}
+
+.sticky {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header {
@@ -73,11 +87,12 @@ header {
 }
 
 footer{
+    position: relative;
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
-    width: 100%;
+    width: 96%;
 }
 
 .underline{
@@ -87,4 +102,98 @@ footer{
 .photo{
     display: inline-block;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+    margin-right: 34px;
+    height: 30%;
+    width: 30%;
+    object-fit: cover;
+    border-radius: 20px;
 }
+
+.autograph{
+    position: absolute;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    margin-right: 34px;
+    height: 45%;
+    width: 10%;
+    top: 60px;
+    left: 1050px;
+}
+
+article {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+}
+
+.table-headers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 0;
+    text-align: center;
+    background-color: #09aee0;
+    color: white;
+    font-weight: bold;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.table-cell{
+    padding: 10px;
+}
+
+.table-row:nth-child(odd) {
+    background-color: #b0b0b0;
+}
+
+.table-row:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .table-cell, .table-headers div {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 900px) {
+    .page__navigation {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .page__navigation nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page__navigation nav a {
+        padding: 5px;
+        width: auto;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .autograph {
+        display: none;
+    }
+}
+
