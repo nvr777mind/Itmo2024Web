@@ -37,8 +37,18 @@
 		<h2>Пользователи, отметившиеся на сайте:</h2>
 
 		<div>
-			<ul id="userList"></ul>
+			<ul class="userList" id="userList"></ul>
 		</div>
+	</form>
+
+	<form class="container">
+		<h2>Лучшие пользователи:</h2>
+		<div class="preloader" id="preloader"></div>
+		<div id="content">
+			<ul class="userList" id="topUserList"></ul>
+			<div class="hidden" id="error-message">⚠️ Упс, что-то пошло не так</div>
+		</div>
+		<script src="../Scripts/TopUsers.js"></script>
 	</form>
 
 </main>
